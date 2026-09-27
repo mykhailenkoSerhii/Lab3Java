@@ -2,6 +2,10 @@ import task1.CombustionEngine;
 import task1.DieselEngine;
 import task1.Engine;
 import task1.JetEngine;
+import task2.Norm;
+import task2.Vector2D;
+import task2.Vector3D;
+import task3.INorm;
 
 import java.util.Scanner;
 
@@ -54,11 +58,31 @@ public class Main
 
 	public static void task2(Scanner scanner)
 	{
+		Norm[] normArray = new Norm[3];
+		normArray[0] = new Vector2D(3, 4);
+		normArray[1] = new Vector3D(3, 4, 5);
+		normArray[2] = new Vector2D(1,5);
 
+		for(Norm norm : normArray)
+		{
+			System.out.println(norm.toString());
+			System.out.printf("Module: %.2f\nNorm: %.2f\n\n",
+					norm.calculateModule(), norm.calculateNorm());
+		}
 	}
 
 	public static void task3(Scanner scanner)
 	{
+		INorm[] normArray = new INorm[3];
+		normArray[0] = new task3.Vector2D(3, 4);
+		normArray[1] = new task3.Vector3D(3, 4, 5);
+		normArray[2] = new task3.Vector2D(1,5);
 
+		for(INorm norm : normArray)
+		{
+			System.out.println(norm.toString());
+			System.out.printf("Module: %.2f\nNorm: %.2f\n\n",
+					norm.calculateModule(), norm.calculateNorm());
+		}
 	}
 }
